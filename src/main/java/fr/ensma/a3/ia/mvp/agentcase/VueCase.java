@@ -20,8 +20,8 @@ public class VueCase extends Pane implements EventHandler<MouseEvent>, IMediateu
 		croix = new Image("/croix.png");
 		rond = new Image("/rond.png");
 		vide = new Image("/vide.png");
-		setImage(croix);
 		setPrefSize(110, 110);
+		setImage(vide);
 		
 		addEventHandler(MouseEvent.MOUSE_PRESSED, this);
 	}

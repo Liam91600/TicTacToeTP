@@ -24,30 +24,22 @@ public class PresentationPlateau implements ICaseObserver, IAutomatePlateau{
 	
 	public PresentationPlateau() {
 		
-		vuePlateau.setPresentation(this);
 		
 		etatCroix = new EtatCroix(this);
 		etatRond = new EtatRond(this);
 		etatVide = new EtatVide(this);
 		
 		etatCourants = new ArrayList<>();
+		presentationCases = new ArrayList<>();
 		
-		//s'abonne a toutes les cases (observer)
-		for (PresentationCase pCase : presentationCases) {
-			pCase.addObserver(this);
-			
-			//on rempli la liste des 9 états courants correspondant a l'état courant de chaque case
-			etatCourants.add(etatVide);
-		}
+
 	}
 	
 	
 	@Override
 	public void notifyClick(PresentationCase pCase) {
-		//pCase.set
 		try {
-			etatCourants.get(pCase.getNum()).click(pCase.getNum());
-			pCase.setCroix();
+			etatCourants.get(pCase.getNum()).click(pCase);						
 		}catch(TransitionException ex) {
 			//ex.printStackTrace();
 		}
@@ -57,13 +49,22 @@ public class PresentationPlateau implements ICaseObserver, IAutomatePlateau{
 
 	public void setListePresCase(List<PresentationCase> pc) {
 		presentationCases = pc;
+		
+		
+		//s'abonne a toutes les cases (observer)
+		for (PresentationCase pCase : presentationCases) {
+			pCase.addObserver(this);
+			
+			//on rempli la liste des 9 états courants correspondant a l'état courant de chaque case
+			etatCourants.add(etatVide);
+		}
 	}
 
 
 
 	@Override
-	public void setEtatCourant(IEtatPlateau etat, int i) {
-		etatCourants.set(i, etat);
+	public void setEtatCourant(IEtatPlateau etat, PresentationCase pCase) {
+		etatCourants.set(pCase.getNum(), etat);
 	}
 	@Override
 	public IEtatPlateau getEtatCroix() {

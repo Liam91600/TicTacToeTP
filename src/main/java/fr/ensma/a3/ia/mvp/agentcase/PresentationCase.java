@@ -1,5 +1,6 @@
 package fr.ensma.a3.ia.mvp.agentcase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.ensma.a3.ia.mvp.agentcase.etats.EtatCaseDisable;
@@ -28,6 +29,8 @@ public class PresentationCase implements IAutomateCase{
 	public PresentationCase(VueCase vc, int i) {
 		vueCase = vc;
 		num = i;
+		
+		abonnes = new ArrayList<>();
 		
 		etatEnable = new EtatCaseEnable(this);
 		etatDisable = new EtatCaseDisable(this);

@@ -21,7 +21,7 @@ public class VuePlateau extends TilePane implements IMediateurPlateau{
 		presentationCases = new ArrayList<>();
 		setOrientation(Orientation.HORIZONTAL);
 		
-		for (int i=1; i<10; i++) {
+		for (int i=0; i<9; i++) {
 			VueCase cv = new VueCase();
 			vueCases.add(cv);
 			
@@ -31,9 +31,7 @@ public class VuePlateau extends TilePane implements IMediateurPlateau{
 			cv.setPresentation(cp);
 			
 			getChildren().add(cv);
-		}
-		//vueCases.get(4).setRond(); interdit 
-		
+		}		
 	
 		}
 	
