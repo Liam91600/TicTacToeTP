@@ -8,7 +8,7 @@ import fr.ensma.a3.ia.mvp.agentcase.VueCase;
 import javafx.geometry.Orientation;
 import javafx.scene.layout.TilePane;
 
-public class VuePlateau extends TilePane{
+public class VuePlateau extends TilePane implements IMediateurPlateau{
 	
 	
 	private List<VueCase> vueCases;
@@ -21,11 +21,11 @@ public class VuePlateau extends TilePane{
 		presentationCases = new ArrayList<>();
 		setOrientation(Orientation.HORIZONTAL);
 		
-		for (int i=0; i<9; i++) {
+		for (int i=1; i<10; i++) {
 			VueCase cv = new VueCase();
 			vueCases.add(cv);
 			
-			PresentationCase cp = new PresentationCase(cv);
+			PresentationCase cp = new PresentationCase(cv, i);
 			presentationCases.add(cp);
 			
 			cv.setPresentation(cp);

@@ -51,8 +51,7 @@ public class VueCase extends Pane implements EventHandler<MouseEvent>, IMediateu
 	
 	@Override
 	public void handle(MouseEvent event) {
-		System.out.println("test!!!!");
-		setImage(rond);
+		presentationCase.clickButton();
 	}
 
 	

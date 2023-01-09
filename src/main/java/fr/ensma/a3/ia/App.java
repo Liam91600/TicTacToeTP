@@ -1,4 +1,4 @@
-package fr.ensma.a3.ia;
+ package fr.ensma.a3.ia;
 
 import fr.ensma.a3.ia.mvp.agentplateau.PresentationPlateau;
 import fr.ensma.a3.ia.mvp.agentplateau.VuePlateau;

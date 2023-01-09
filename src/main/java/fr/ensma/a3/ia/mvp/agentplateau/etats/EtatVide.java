@@ -6,8 +6,8 @@ public class EtatVide extends AbstractEtatPlateau{
 		super(aut);
 	}
 	
-	public void croix() throws TransitionException{
-		autom.setEtatCourant(autom.getEtatCroix());
+	public void click(int i) throws TransitionException{
+		autom.setEtatCourant(autom.getEtatCroix(), i);
 	}
 
 }

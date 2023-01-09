@@ -6,7 +6,7 @@ public class EtatRond extends AbstractEtatPlateau{
 		super(aut);
 	}
 
-	public void vide() throws TransitionException{
-		autom.setEtatCourant(autom.getEtatVide());
+	public void click(int i) throws TransitionException{
+		autom.setEtatCourant(autom.getEtatVide(), i);
 	}
 }

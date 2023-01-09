@@ -6,8 +6,8 @@ public class EtatCroix extends AbstractEtatPlateau{
 		super(aut);
 	}
 	
-	public void rond() throws TransitionException{
-		autom.setEtatCourant(autom.getEtatRond());
+	public void click(int i) throws TransitionException{
+		autom.setEtatCourant(autom.getEtatRond(), i);
 	}
 
 }
